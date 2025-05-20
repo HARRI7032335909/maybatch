@@ -6,26 +6,31 @@ import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 
 @Model(adaptables = Resource.class,defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
-public class DemoModel {
+public class DemoModel implements Demo{
     @ValueMapValue
     private String text;  //instance variable
     @ValueMapValue
-    private String desc;
+    private String des;
     @ValueMapValue
     private int num;
   //getter and setter 
     //getter -->to get the value from the variabl
-
-    public String getText() {
+    @Override
+    public String getArticleTitle() {
         return text;
     }
-    public String getDesc() {
-        return desc;
+    @Override
+    public String getArticleDes() {
+       return des; 
     }
-    public int getNum() {
+    @Override
+    public int getArticleNum() {
+
         return num;
+       
     }
 
+   
     
   
     
